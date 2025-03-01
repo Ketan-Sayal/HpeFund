@@ -64,7 +64,7 @@ const Login = () => {
     };
     
     return (
-        <div className='absolute w-screen inset-0 z-10 h-screen bg-[rgba(0,0,0,0.7)] flex items-center justify-center flex-col'>
+        <div className='absolute w-screen inset-0 z-10 h-screen bg-black sm:bg-[rgba(0,0,0,0.7)] flex items-center justify-center flex-col'>
             <Formik
                 initialValues={defaultValues}
                 onSubmit={handleSubmit}
@@ -77,7 +77,7 @@ const Login = () => {
                         <div>
                             <span className='text-white font-bold text-4xl text-epilogue'>Login</span>
                         </div>
-                        
+                        f
                         {errorMessage && (
                             <div className="text-red-300 text-sm text-center w-full">
                                 {errorMessage}
@@ -88,7 +88,7 @@ const Login = () => {
                             <Field
                                 placeholder='Email'
                                 type='email'
-                                className='py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
+                                className='py-[15px] f sm:px-[25px] px-[15px] outline-none border-[1px] focus:bg-transparent border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
                                 name='email'
                             />
                             {errors.email && touched.email && (
@@ -103,7 +103,7 @@ const Login = () => {
                            <Field
                                 placeholder='Password'
                                 type={isText}
-                                className='py-[15px] w-full  sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
+                                className='py-[15px] w-full  sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px] focus:bg-transparent'
                                 name='password'
                             />
                             {

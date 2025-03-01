@@ -71,7 +71,7 @@ const Signup = () => {
     };
     
     return (
-        <div className='absolute inset-0 z-10 w-screen bg-[rgba(0,0,0,0.7)] flex items-center justify-center'>
+        <div className='absolute inset-0 z-10  w-screen bg-black sm:bg-[rgba(0,0,0,0.7)] flex items-center justify-center'>
             <Formik
                 initialValues={defaultValues}
                 onSubmit={handleSubmit}
@@ -96,7 +96,7 @@ const Signup = () => {
                             <Field
                                 placeholder='Username'
                                 type='text'
-                                className='py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
+                                className='py-[15px] focus:bg-transparent sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
                                 name='username'
                             />
                             {errors.username && touched.username && (
@@ -110,7 +110,7 @@ const Signup = () => {
                             <Field
                                 placeholder='Email'
                                 type='email'
-                                className='py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
+                                className='py-[15px] focus:bg-transparent sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
                                 name='email'
                             />
                             {errors.email && touched.email && (
@@ -125,7 +125,7 @@ const Signup = () => {
                                                   <Field
                                                        placeholder='Password'
                                                        type={isText}
-                                                       className='py-[15px] w-full  sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
+                                                       className='py-[15px] focus:bg-transparent w-full  sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]'
                                                        name='password'
                                                    />
                                                    {
