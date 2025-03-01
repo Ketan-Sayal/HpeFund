@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home, CreateCampaign, Profile, CampaignDetails, Login, Signup, LandingPage } from './pages';
+import { Home, CreateCampaign, Profile, CampaignDetails, Login, Signup, LandingPage, PageNotFound } from './pages';
 import { Sidebar, Navbar } from './components';
 import { useStateContext } from './context';
 import Cookies from 'js-cookie'; 
@@ -53,6 +53,7 @@ const App = () => {
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                     <Route path='/' element={<LandingPage />} />
+                    <Route path='*' element={<PageNotFound />} />
                 </Routes>
             </div>
         </div>
