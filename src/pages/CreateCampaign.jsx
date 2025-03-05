@@ -29,7 +29,7 @@ function CreateCampaign() {
   const handleSubmit = async(e)=>{
     try{
       e.preventDefault();
-      if(address!==null){
+      if(address){
         checkIfImage(form.image, async(exists)=>{
           if(exists){
             setIsLoading(true);
@@ -41,7 +41,7 @@ function CreateCampaign() {
           }
         })
       }else{
-        setError(true);
+        setError(true)
       }
     }catch(err){
       setError(true);
