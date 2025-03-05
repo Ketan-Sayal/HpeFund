@@ -24,21 +24,25 @@ function CreateCampaign() {
     setForm({...form, [feildName]: e.target.value})
   }
 
-  const {authState} = useStateContext();
+  const {authState, address} = useStateContext();
 
   const handleSubmit = async(e)=>{
     try{
       e.preventDefault();
-    checkIfImage(form.image, async(exists)=>{
-      if(exists){
-        setIsLoading(true);
-        await createCampaign({...form, target: ethers.utils.parseUnits(form.target, 18)});//Ethers change
-        navigate('/home');
+      if(address!==null){
+        checkIfImage(form.image, async(exists)=>{
+          if(exists){
+            setIsLoading(true);
+            await createCampaign({...form, target: ethers.utils.parseUnits(form.target, 18)});//Ethers change
+            navigate('/home');
+          }else{
+            alert('Provide a valid image url');
+            setForm({...form, image:''});
+          }
+        })
       }else{
-        alert('Provide a valid image url');
-        setForm({...form, image:''});
+        setError(true);
       }
-    })
     }catch(err){
       setError(true);
     }finally{
