@@ -33,7 +33,6 @@ function CreateCampaign() {
       if(exists){
         setIsLoading(true);
         await createCampaign({...form, target: ethers.utils.parseUnits(form.target, 18)});//Ethers change
-        setIsLoading(false);
         navigate('/home');
       }else{
         alert('Provide a valid image url');
@@ -42,6 +41,8 @@ function CreateCampaign() {
     })
     }catch(err){
       setError(true);
+    }finally{
+      setIsLoading(false);
     }
 
   }
